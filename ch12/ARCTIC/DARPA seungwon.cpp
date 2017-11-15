@@ -2,28 +2,28 @@
 #include <vector>
 using namespace std;
 
-//°áÁ¤ ¹®Á¦: Á¤·ÄµÇ¾îÀÖ´Â location Áß camera¸¦ ¼±ÅÃÇØ ¸ğµç Ä«¸Ş¶ó °£ÀÇ °£°İÀÌ
-//gap ÀÌ»óÀÌ µÇ´Â ¹æ¹ıÀÌ ÀÖ´ÂÁö¸¦ ¹İÈ¯ÇÑ´Ù.
+//ê²°ì • ë¬¸ì œ: ì •ë ¬ë˜ì–´ìˆëŠ” location ì¤‘ cameraë¥¼ ì„ íƒí•´ ëª¨ë“  ì¹´ë©”ë¼ ê°„ì˜ ê°„ê²©ì´
+//gap ì´ìƒì´ ë˜ëŠ” ë°©ë²•ì´ ìˆëŠ”ì§€ë¥¼ ë°˜í™˜í•œë‹¤.
 bool decision(const vector<double>& location, int cameras, double gap) {
-	//Ä«¸Ş¶ó¸¦ ¼³Ä¡ÇÒ ¼ö ÀÖÀ» ¶§¸¶´Ù ¼³Ä¡ÇÏ´Â Å½¿åÀû ¾Ë°í¸®Áò
+	//ì¹´ë©”ë¼ë¥¼ ì„¤ì¹˜í•  ìˆ˜ ìˆì„ ë•Œë§ˆë‹¤ ì„¤ì¹˜í•˜ëŠ” íƒìš•ì  ì•Œê³ ë¦¬ì¦˜
 	double limit = -1;
 	int installed = 0;
 	for (int i = 0; i < location.size(); ++i) {
 		if (limit <= location[i]) {
 			++installed;
-			//location[i]+gap ÀÌÈÄ´Â µÇ¾î¾ß Ä«¸Ş¶ó¸¦ ¼³Ä¡ÇÒ ¼ö ÀÖ´Ù.
+			//location[i]+gap ì´í›„ëŠ” ë˜ì–´ì•¼ ì¹´ë©”ë¼ë¥¼ ì„¤ì¹˜í•  ìˆ˜ ìˆë‹¤.
 			limit = location[i] + gap;
 		}
 	}
-	//°á°úÀûÀ¸·Î cameras´ë ÀÌ»óÀ» ¼³Ä¡ÇÒ ¼ö ÀÖ¾úÀ¸¸é ¼º°ø
+	//ê²°ê³¼ì ìœ¼ë¡œ camerasëŒ€ ì´ìƒì„ ì„¤ì¹˜í•  ìˆ˜ ìˆì—ˆìœ¼ë©´ ì„±ê³µ
 	return installed >= cameras;
 }
 double optimize(const vector<double>& location, int cameras) {
 	double lo = 0, hi = 241;
-	//¹İº¹¹® ºÒº¯½Ä: decision(lo)&& !decision(hi)
+	//ë°˜ë³µë¬¸ ë¶ˆë³€ì‹: decision(lo)&& !decision(hi)
 	for (int it = 0; it < 100; ++it) {
 		double mid = (lo + hi) / 2.0;
-		//°£°İÀÌ mid ÀÌ»óÀÌ µÇµµ·Ï ÇÒ ¼ö ÀÖÀ¸¸é ´äÀº [mid,hi]¿¡ ÀÖ´Ù.
+		//ê°„ê²©ì´ mid ì´ìƒì´ ë˜ë„ë¡ í•  ìˆ˜ ìˆìœ¼ë©´ ë‹µì€ [mid,hi]ì— ìˆë‹¤.
 		if (decision(location, cameras, mid)) 
 			lo = mid;
 		else 
