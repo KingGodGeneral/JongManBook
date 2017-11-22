@@ -42,15 +42,15 @@ inline double dist(Pd p1, Pd p2)
 }
 bool ok()
 {
-	//0¹ø ±âÁö¿¡¼­ ´Ù¸¥ ¸ðµç ±âÁö·Î °¥ ¼ö ÀÖÀ¸¸é true, ¾øÀ¸¸é false ¹ÝÈ¯
+	//0ë²ˆ ê¸°ì§€ì—ì„œ ë‹¤ë¥¸ ëª¨ë“  ê¸°ì§€ë¡œ ê°ˆ ìˆ˜ ìžˆìœ¼ë©´ true, ì—†ìœ¼ë©´ false ë°˜í™˜
 	fup(i, 1, n - 1, 1)
 		if (!a[0][i])return 0;
 	return 1;
 }
 bool OK(double k)
 {
-	//±âÁö »çÀÌÀÇ °Å¸®°¡ kÀÌÇÏ ÀÏ ¶§ ¿¬°áÇÏ°í ÇÃ·ÎÀÌµå ¿Í¼£ ¾Ë°í¸®ÁòÀ» ÅëÇØ¼­ ÀÓÀÇÀÇ ±âÁö i¿¡¼­ j±îÁö °¥ ¼ö ÀÖ´ÂÁö È®ÀÎÇÏ°í
-	//À§ÀÇ ok() ÇÔ¼ö¸¦ ÅëÇØ¼­ 0¹ø ±âÁö¿¡¼­ ¸ðµç ±âÁö·Î °¥ ¼ö ÀÖ´Â Áö È®ÀÎ
+	//ê¸°ì§€ ì‚¬ì´ì˜ ê±°ë¦¬ê°€ kì´í•˜ ì¼ ë•Œ ì—°ê²°í•˜ê³  í”Œë¡œì´ë“œ ì™€ìƒ¬ ì•Œê³ ë¦¬ì¦˜ì„ í†µí•´ì„œ ìž„ì˜ì˜ ê¸°ì§€ iì—ì„œ jê¹Œì§€ ê°ˆ ìˆ˜ ìžˆëŠ”ì§€ í™•ì¸í•˜ê³ 
+	//ìœ„ì˜ ok() í•¨ìˆ˜ë¥¼ í†µí•´ì„œ 0ë²ˆ ê¸°ì§€ì—ì„œ ëª¨ë“  ê¸°ì§€ë¡œ ê°ˆ ìˆ˜ ìžˆëŠ” ì§€ í™•ì¸
 	MEM0(a);
 	fup(i, 0, n - 1, 1)
 		fup(j, i + 1, n - 1, 1)
