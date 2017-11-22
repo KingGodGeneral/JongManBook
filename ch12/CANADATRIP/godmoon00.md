@@ -1,6 +1,7 @@
 - 수행시간: 52ms
 
-`cout << mid` 로 했다가 여러번 틀렸는데 왜 `cout << low`로 해야하는지 아직 이해가 가지않음(내용추가 예정)
+`cout << mid` 로 했다가 여러번 틀렸는데 왜 `cout << low`로 해야하는지 아직 이해가 가지않음
+
 
 ```cpp
 #include <bits/stdc++.h>
@@ -26,8 +27,6 @@ int main()
             int l, m ,g;
             cin >> l >> m >> g;
             v.push_back({l, m, g});
-            low = min(low, l - m);
-            high = max(high, l);
         }
         while (low <= high) {
             mid = (low + high) / 2;
