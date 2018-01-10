@@ -106,20 +106,20 @@ int main() {
 		BipartiteUnionFind	myBuf(n);
 		string s; int u, v;
 		bool cd = true;
+		int cont = 0;
 		for (int i = 0; i < m; i++) {
 			cin >> s >> u >> v;
+			if (!cd) continue;
 			if (s == "ACK") {
 				cd = myBuf.ack(u, v);
 			}
 			else {
 				cd = myBuf.dis(u, v);
 			}
-			if (!cd) {
-				cout << "CONTRADICTION AT " << i + 1 << '\n';
-				break;
-			}
+			if (!cd) cont = i + 1;
 		}
 		if (cd) cout << "MAX PARTY SIZE IS " << maxParty(myBuf) << '\n';
+		else cout << "CONTRADICTION AT " << cont << '\n';
 	}
 	// code ended
 	return 0;
