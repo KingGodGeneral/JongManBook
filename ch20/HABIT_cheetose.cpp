@@ -1,42 +1,3 @@
-
-SINCE 2007
-cheetose
-cheetose
-±Û 1°³, ¹®Á¦ 63°³
-settingssign out
-´º½º ÇÇµå
-Æ÷·³
-´º½º
-ÀÚÀ¯°Ô½ÃÆÇ
-Áú¹®°ú ´äº¯
-°ú°Å °Ô½ÃÆÇ
-À§Å°
-ÆäÀÌÁö ¸ñ·Ï
-¿Â¶óÀÎ ÀúÁö
-¹®Á¦ Ç®±â
-¹®Á¦ ³»±â
-·£´ı ¹®Á¦ °í¸£±â
-ÃÖ±Ù Á¦ÃâµÈ ´ä¾È
-»ç¿ëÀÚ ·©Å·
-Æ©Åä¸®¾ó
-Ä¶¸°´õ
-¾Ë°í½ºÆÌ ´ëÈ­¹æ
-ÃÊ´ëÀå ¹Ş±â
-ÀÌ¿ë ¾È³»
-
-°Ë»öÇÏ±â
-
-AOJ ¹®Á¦ ¹Ù·Î°¡±â
-
-´Ù°¡¿À´Â ÀÌº¥Æ®µé
-see all
-
-´ä¾È ¹øÈ£ #547376
-¹®Á¦Á¦ÃâÀÚÁ¦Ãâ ½Ã°£±æÀÌ¼öÇà ½Ã°£Ã¤Á¡ °á°ú
-HABITcheetose1ÀÏ Àü 2.5KB 100ms Á¤´ä
-ÀçÃ¤Á¡ ¿äÃ»
-Request Rejudge
-¼Ò½º ÄÚµå
 #include<cstdio>
 #include<iostream>
 #include<vector>
@@ -79,7 +40,7 @@ typedef vector<Pd> VPd;
 typedef complex<double> base;
 ll POW(ll a, ll b) { if (b == 0)return 1; if (b == 1)return a; if (b & 1)return (a*POW(a, b - 1)) % MOD; ll t = POW(a, b / 2); return (t*t) % MOD; }
 ll gcd(ll a, ll b) { return b ? gcd(b, a%b) : a; }
-int dx[] = { 0,-1,1,0 }, dy[] = { 1,0,0,-1 };//µ¿ºÏ³²¼­
+int dx[] = { 0,-1,1,0 }, dy[] = { 1,0,0,-1 };//ë™ë¶ë‚¨ì„œ
 int ddx[] = { 0,0,1,1,1,-1,-1,-1 }, ddy[] = { 1,-1,1,0,-1,1,0,-1 };
 
 int pos[4005], sa[4005], lcp[4005], temp[4005], N, d;
